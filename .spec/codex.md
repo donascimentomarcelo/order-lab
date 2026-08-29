@@ -533,18 +533,18 @@ team=order-lab
 
 ```text
 order-lab/
-├── codex.md
+├── .spec/
+│   └── codex.md
 ├── README.md
 ├── pom.xml
 ├── mvnw
 ├── mvnw.cmd
 ├── .mvn/
-├── services/
-│   ├── checkout/
-│   ├── pricing/
-│   ├── inventory/
-│   ├── payment/
-│   └── fulfillment/
+├── checkout/
+├── pricing/
+├── inventory/
+├── payment/
+├── fulfillment/
 ├── contracts/
 │   ├── asyncapi/
 │   └── json-schema/
