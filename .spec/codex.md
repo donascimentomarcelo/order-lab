@@ -42,6 +42,7 @@ Versões de referência no momento deste planejamento:
 | Componente | Escolha inicial |
 |---|---|
 | Java | Java 25 LTS |
+| Kotlin | Serviço `pricing`, com versão gerenciada pelo Spring Boot |
 | Spring Boot | 4.1.1 |
 | Aplicações HTTP | Spring MVC |
 | Build | Maven Wrapper e Maven multi-module |
@@ -68,6 +69,8 @@ As versões devem ficar fixadas nos arquivos de build e infraestrutura. Antes da
 ### Decisões técnicas
 
 - Usar **Spring MVC**, pois o foco é entender código bloqueante escalando com virtual threads. WebFlux não será usado no caminho principal.
+- Implementar `pricing` em Kotlin para praticar interoperabilidade JVM, null safety, data classes e sealed classes, mantendo os demais serviços em Java 25.
+- Não usar Kotlin Coroutines no primeiro ciclo; a concorrência principal continuará baseada em virtual threads.
 - Usar o `HttpClient` nativo do Java para tornar explícito o uso dos recursos da plataforma.
 - Usar Spring Data JDBC inicialmente, evitando que detalhes de ORM escondam parte do comportamento observado.
 - Usar apenas APIs estáveis no perfil padrão.

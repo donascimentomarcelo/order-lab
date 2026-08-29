@@ -4,13 +4,13 @@ Laboratório de microsserviços com Java 25, Spring Boot 4.1.1 e observabilidade
 
 ## Serviços
 
-| Serviço | Porta local | Responsabilidade inicial |
-|---|---:|---|
-| `checkout` | 8080 | Orquestrar o checkout |
-| `pricing` | 8081 | Fornecer preços |
-| `inventory` | 8082 | Controlar estoque |
-| `payment` | 8083 | Simular pagamentos |
-| `fulfillment` | 8084 | Processar fulfillment |
+| Serviço | Linguagem | Porta local | Responsabilidade inicial |
+|---|---|---:|---|
+| `checkout` | Java 25 | 8080 | Orquestrar o checkout |
+| `pricing` | Kotlin | 8081 | Fornecer preços |
+| `inventory` | Java 25 | 8082 | Controlar estoque |
+| `payment` | Java 25 | 8083 | Simular pagamentos |
+| `fulfillment` | Java 25 | 8084 | Processar fulfillment |
 
 ## Pré-requisitos
 
@@ -22,7 +22,7 @@ Laboratório de microsserviços com Java 25, Spring Boot 4.1.1 e observabilidade
 No PowerShell:
 
 ```powershell
-.\mvnw.cmd clean verify
+./mvnw.cmd clean verify
 ```
 
 ## Executar um serviço
@@ -30,7 +30,7 @@ No PowerShell:
 Exemplo com o `checkout`:
 
 ```powershell
-.\mvnw.cmd -pl checkout spring-boot:run
+./mvnw.cmd -pl checkout spring-boot:run
 ```
 
 Os demais serviços podem ser iniciados em terminais separados, substituindo o caminho do módulo.
