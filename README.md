@@ -25,12 +25,26 @@ No PowerShell:
 ./mvnw.cmd clean verify
 ```
 
+Ou, com GNU Make instalado:
+
+```powershell
+make verify
+```
+
+Use `make help` para listar os demais comandos disponíveis.
+
 ## Executar um serviço
 
 Exemplo com o `checkout`:
 
 ```powershell
 ./mvnw.cmd -pl checkout spring-boot:run
+```
+
+O comando equivalente pelo Makefile é:
+
+```powershell
+make run SERVICE=checkout
 ```
 
 Os demais serviços podem ser iniciados em terminais separados, substituindo o caminho do módulo.
