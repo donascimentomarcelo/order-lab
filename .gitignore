@@ -1,0 +1,91 @@
+# Maven
+target/
+**/target/
+.flattened-pom.xml
+dependency-reduced-pom.xml
+pom.xml.releaseBackup
+release.properties
+
+# Java and JVM diagnostics
+*.class
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+*.war
+*.ear
+hs_err_pid*
+replay_pid*
+*.hprof
+*.jfr
+
+# OpenTelemetry agent downloaded for local execution
+opentelemetry-javaagent.jar
+**/opentelemetry-javaagent.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Visual Studio Code
+.vscode/
+
+# Eclipse and Spring Tool Suite
+.classpath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+bin/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+*~
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+
+# Local Kubernetes and Helm secrets/overrides
+**/secrets.local.yaml
+**/secret.local.yaml
+**/values.local.yaml
+**/values.secret.yaml
+**/*.local-secret.yaml
+
+# Testcontainers
+.testcontainers.properties
+
+# k6 results
+infrastructure/load-tests/results/
+**/k6-results/
+*.k6.json
+
+# Local runtime data
+.data/
+/data/
+/volumes/
+
+# Coverage and reports
+coverage/
+*.exec
+allure-results/
+allure-report/
