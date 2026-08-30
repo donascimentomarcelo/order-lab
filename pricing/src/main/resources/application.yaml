@@ -7,7 +7,7 @@ spring:
   datasource:
     url: ${PRICING_DB_URL:jdbc:postgresql://127.0.0.1:5432/orderlab}
     username: ${PRICING_DB_USERNAME:system_design}
-    password: ${PRICING_DB_PASSWORD:}
+    password: ${PRICING_DB_PASSWORD:system_design}
     hikari:
       pool-name: pricing-pool
       minimum-idle: 1
@@ -17,6 +17,11 @@ spring:
     enabled: true
     locations: classpath:db/migration
     validate-on-migrate: true
+
+pricing:
+  catalog:
+    generated-product-seeding:
+      enabled: ${PRICING_GENERATED_PRODUCT_SEEDING_ENABLED:true}
 
 server:
   port: ${SERVER_PORT:8081}

@@ -12,7 +12,10 @@ import java.net.http.HttpResponse
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(
+    webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+    properties = ["pricing.catalog.generated-product-seeding.enabled=false"],
+)
 @Import(TestcontainersConfiguration::class)
 class PricingHttpTests {
 
@@ -57,6 +60,18 @@ class PricingHttpTests {
 
         assertEquals(200, response.statusCode())
         assertTrue(response.body().contains("\"virtualThread\":true"))
+    }
+
+    @Test
+    fun `exposes prometheus metrics`() {
+        get("/prices/NOTEBOOK-001?quantity=1")
+
+        val response = get("/actuator/prometheus")
+
+        assertEquals(200, response.statusCode())
+        assertTrue(response.body().contains("jvm_info"))
+        assertTrue(response.body().contains("http_server_requests_seconds"))
+        assertTrue(response.body().contains("application=\"pricing\""))
     }
 
     private fun get(path: String): HttpResponse<String> {

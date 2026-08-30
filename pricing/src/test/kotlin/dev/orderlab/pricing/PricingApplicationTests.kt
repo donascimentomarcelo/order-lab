@@ -10,7 +10,7 @@ import java.math.BigDecimal
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
-@SpringBootTest
+@SpringBootTest(properties = ["pricing.catalog.generated-product-seeding.enabled=false"])
 @Import(TestcontainersConfiguration::class)
 class PricingApplicationTests @Autowired constructor(
     private val productCatalog: ProductCatalog,
