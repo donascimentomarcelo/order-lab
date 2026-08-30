@@ -122,7 +122,6 @@ dev.orderlab.pricing
 
 ## Fora do escopo deste ciclo
 
-- PostgreSQL;
 - cache;
 - promoções por cliente;
 - moedas diferentes;
@@ -130,6 +129,8 @@ dev.orderlab.pricing
 - coroutines;
 - chamadas para outros serviços;
 - persistência ou reserva da cotação.
+
+A persistência do catálogo em PostgreSQL foi adicionada em um ciclo posterior e está especificada em [`db.md`](db.md).
 
 ## Resultado da validação
 

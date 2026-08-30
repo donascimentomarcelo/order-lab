@@ -1,11 +1,9 @@
 package dev.orderlab.pricing.catalog
 
 import dev.orderlab.pricing.domain.Product
-import org.springframework.stereotype.Repository
 import java.math.BigDecimal
 import java.util.Locale
 
-@Repository
 class InMemoryProductCatalog : ProductCatalog {
 
     private val products = listOf(
