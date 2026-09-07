@@ -33,6 +33,34 @@ make verify
 
 Use `make help` para listar os demais comandos disponíveis.
 
+## Observabilidade local
+
+Com o PostgreSQL disponível, suba a infraestrutura e o Pricing instrumentado:
+
+```powershell
+make observability-up
+make pricing-otel
+```
+
+Acesse o dashboard provisionado:
+
+```text
+http://localhost:3000/d/orderlab-pricing
+```
+
+Credenciais locais padrão do Grafana: `admin` / `orderlab`.
+
+O dashboard atual apresenta métricas do Pricing, JVM, virtual threads, HikariCP e PostgreSQL. A pesquisa de traces e logs no Grafana será adicionada com Tempo e Loki nas próximas etapas.
+
+Para validar rapidamente o teste de carga e depois executar a rampa completa:
+
+```powershell
+make k6-pricing-smoke
+make k6-pricing
+```
+
+As instruções e os pontos de observação estão em [`.spec/pricing/load-test.md`](.spec/pricing/load-test.md).
+
 ## Executar um serviço
 
 Exemplo com o `checkout`:
