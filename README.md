@@ -63,6 +63,17 @@ As instruções e os pontos de observação estão em [`.spec/pricing/load-test.
 
 ## Executar um serviço
 
+Na primeira execução do Pricing, o PostgreSQL é criado automaticamente pelo Docker Compose:
+
+```powershell
+make run SERVICE=pricing
+```
+
+Os dados ficam persistidos no volume `order-lab_postgres-data`. O contêiner usa
+`restart: unless-stopped`, portanto volta a iniciar automaticamente quando o Docker
+Desktop é aberto. Para consultar ou parar o banco manualmente, use `make db-status`
+e `make db-down`.
+
 Exemplo com o `checkout`:
 
 ```powershell

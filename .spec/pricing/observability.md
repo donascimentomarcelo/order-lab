@@ -252,8 +252,8 @@ Este é um dashboard de **métricas**. Traces pesquisáveis exigem Tempo e logs 
 
 1. conectar Tempo para armazenar e pesquisar traces no Grafana;
 2. conectar Loki para armazenar e pesquisar logs no Grafana;
-3. gerar carga controlada com k6;
-4. analisar saturação do HikariCP e comportamento das virtual threads;
+3. executar pelo usuário a carga k6 definida em [`load-test.md`](load-test.md);
+4. analisar em conjunto a saturação do HikariCP e o comportamento das virtual threads;
 5. levar a configuração validada para o Kubernetes local.
 
 ## Resultado da validação
